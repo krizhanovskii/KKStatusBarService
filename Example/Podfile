@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'KKStatusBarService_Example' do
+  pod 'KKStatusBarService', :path => '../'
+
+  target 'KKStatusBarService_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
