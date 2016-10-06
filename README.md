@@ -38,52 +38,52 @@ import KKStatusBarService
 
 Then you can start monitor the Internet connection:
 ```swift
-KKStatusBarService.startMonitoring()
+    KKStatusBarService.startMonitoring()
 ```
 and when internet connection down - you will see the `message view` on the top of screen, under `status bar`. For finish monitoring call:
 ```swift
-KKStatusBarService.stopMonitoring()
+    KKStatusBarService.stopMonitoring()
 ```
 
 for check is `service running` - use:
 ```swift
-public static var isServiceRunning
+    public static var isServiceRunning
 ```
 
 for change `default checking time` - use:
 ```swift
-public static var kTimeToCheck : Double //min value is 3.0
+    public static var kTimeToCheck : Double //min value is 3.0
 ```
 
 As `example` , use in `AppDelegate`:
 
 ```swift
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-if KKStatusBarService.isServiceRunning == false {
-KKStatusBarService.startMonitoring()
-}
-return true
+    if KKStatusBarService.isServiceRunning == false {
+        KKStatusBarService.startMonitoring()
+    }
+    return true
 }
 
 func applicationDidEnterBackground(application: UIApplication) {
-KKStatusBarService.stopMonitoring()
+    KKStatusBarService.stopMonitoring()
 }
 
 func applicationDidBecomeActive(application: UIApplication) {
-KKStatusBarService.startMonitoring()
+    KKStatusBarService.startMonitoring()
 }
 ```
 
 Another way to use it show for user some info about some event or other:
 
 ```swift
-KKStatusBarService.forceShow() // show view with error message
+    KKStatusBarService.forceShow() // show view with error message
 ```
 
 and then for hide this or `press 'x' button in the right` or use `one` from:
 ```swift
-KKStatusBarService.forceHide()  // hide view with error message
-KKStatusBarService.forceConnected() //change error message end view on connected message end view and then hide
+    KKStatusBarService.forceHide()  // hide view with error message
+    KKStatusBarService.forceConnected() //change error message end view on connected message end view and then hide
 ```
 As default it use `red` and `green` color for view and `text` for `internet status changed`. 
 
