@@ -1,0 +1,16 @@
+PODS:
+  - KKStatusBarService (0.1.0)
+
+DEPENDENCIES:
+  - KKStatusBarService (from `../`)
+
+EXTERNAL SOURCES:
+  KKStatusBarService:
+    :path: ../
+
+SPEC CHECKSUMS:
+  KKStatusBarService: 7d9ee7962ff56a7932be24fc22bd3b2f4c0b6c4a
+
+PODFILE CHECKSUM: bbd986318aeb8167a005067b1f17e5ab3a420b4e
+
+COCOAPODS: 1.1.0.rc.2

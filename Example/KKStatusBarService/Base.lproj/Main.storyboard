@@ -1,25 +1,105 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Snj-AG-mfg">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="aMf-CL-yS6">
+            <objects>
+                <navigationController id="Snj-AG-mfg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ghn-M9-dKX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="0nz-pg-M9f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mgb-Jb-nEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-900" y="-129"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="KKStatusBarService_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZo-eo-nZj">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="TK6-P9-DuX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="Start Monitor"/>
+                                <connections>
+                                    <action selector="btnStartStopPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wee-c1-tsW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpz-Zx-y9K">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ARd-9z-W9F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="Force connect"/>
+                                <connections>
+                                    <action selector="btnForceConnectPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qoJ-GK-ef3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWF-M4-Kiu">
+                                <frame key="frameInset" minX="164" minY="241" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="Force show"/>
+                                <connections>
+                                    <action selector="btnForceShow:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="M4I-7Y-xK5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rl6-WG-Wq7">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="vVO-Ad-dJ9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="ForceStop"/>
+                                <connections>
+                                    <action selector="btnForceStopPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="AM0-x2-gPk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Rl6-WG-Wq7" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="1Kd-2h-29m"/>
+                            <constraint firstItem="kpz-Zx-y9K" firstAttribute="top" secondItem="wWF-M4-Kiu" secondAttribute="bottom" constant="10" id="1uL-z9-Ah1"/>
+                            <constraint firstItem="wWF-M4-Kiu" firstAttribute="height" secondItem="kpz-Zx-y9K" secondAttribute="height" id="3ZP-gr-jOi"/>
+                            <constraint firstItem="Rl6-WG-Wq7" firstAttribute="width" secondItem="cZo-eo-nZj" secondAttribute="width" id="5M6-Vu-FCc"/>
+                            <constraint firstItem="Rl6-WG-Wq7" firstAttribute="leading" secondItem="kpz-Zx-y9K" secondAttribute="trailing" constant="10" id="6lZ-py-P62"/>
+                            <constraint firstItem="kpz-Zx-y9K" firstAttribute="width" secondItem="cZo-eo-nZj" secondAttribute="width" id="8xL-xL-nLj"/>
+                            <constraint firstItem="cZo-eo-nZj" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Jvh-1x-lII"/>
+                            <constraint firstItem="wWF-M4-Kiu" firstAttribute="width" secondItem="kpz-Zx-y9K" secondAttribute="width" id="RzN-S9-rlo"/>
+                            <constraint firstItem="wWF-M4-Kiu" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="T4L-Pr-RmS"/>
+                            <constraint firstItem="Rl6-WG-Wq7" firstAttribute="leading" secondItem="kpz-Zx-y9K" secondAttribute="trailing" constant="10" id="VQf-XD-Vhc"/>
+                            <constraint firstItem="kpz-Zx-y9K" firstAttribute="leading" secondItem="cZo-eo-nZj" secondAttribute="trailing" constant="10" id="YhS-2Y-dvH"/>
+                            <constraint firstItem="Rl6-WG-Wq7" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="YsJ-Fc-bnf"/>
+                            <constraint firstItem="cZo-eo-nZj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="k4C-hc-JsC"/>
+                            <constraint firstItem="kpz-Zx-y9K" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="ks7-9b-0Rv"/>
+                            <constraint firstItem="kpz-Zx-y9K" firstAttribute="leading" secondItem="cZo-eo-nZj" secondAttribute="trailing" constant="10" id="yHM-yr-CDE"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Zzc-kB-Xa9"/>
+                    <connections>
+                        <outlet property="btnStartStopmonitoring" destination="cZo-eo-nZj" id="1bn-nF-MJO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-6" y="-81"/>
         </scene>
     </scenes>
 </document>

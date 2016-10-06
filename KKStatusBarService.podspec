@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'KKStatusBarService'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of KKStatusBarService.'
+  s.summary          = 'Simple view for check internet weather or say something for user '
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,26 +17,22 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = "iOS lib that helps provide information to user about internet connection or other thing. Simple, animatable and powerfull"
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/KKStatusBarService'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'k_krizhanovskii' => 'kk@starladder.tv' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/KKStatusBarService.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.homepage         = "https://github.com/krizhanovskii"
+  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.license          = 'MIT'
+  s.author           = { "k.krizhanovskii" => "k.krizhanovskii@gmail.com" }
+  s.source           = { :git => "https://github.com/krizhanovskii/KKStatusBarService.git", :tag => s.version.to_s }
+  # s.social_media_url = 'https://twitter.com/_int3rn_'
 
-  s.ios.deployment_target = '8.0'
+  s.platform     = :ios, '9.0'
+  s.requires_arc = true
 
   s.source_files = 'KKStatusBarService/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'KKStatusBarService' => ['KKStatusBarService/Assets/*.png']
-  # }
+  s.resources = 'KKStatusBarService/Assets/Assets.xcassets'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit', 'Foundation'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
